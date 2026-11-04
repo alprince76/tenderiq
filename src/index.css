@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+
+@theme {
+  --font-sans: "Inter Variable", Inter, ui-sans-serif, system-ui, sans-serif;
+  --color-primary: #1560b8;
+  --color-primary-dark: #114f99;
+  --color-primary-soft: #e8f0fa;
+  --color-canvas: #f5f7fa;
+  --color-ink: #1f2937;
+  --color-ink-2: #6b7280;
+  --color-line: #e5e7eb;
+  --color-good: #15803d;
+  --color-good-soft: #e7f5ec;
+  --color-bad: #b91c1c;
+  --color-bad-soft: #fdeaea;
+  --color-warn: #b45309;
+  --color-warn-soft: #fdf3e0;
+  --color-info: #1560b8;
+  --color-info-soft: #e8f0fa;
+}
+
+html, body, #root { height: 100%; }
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+/* Kolom grid boleh menyusut; tabel lebar bergulir di dalam kartunya sendiri. */
+@layer base { .grid > * { min-width: 0; } }
+button:not(:disabled), [role="tab"] { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 1px; }
+/* Fokus kotak chat melayang ditandai pada bingkai pill-nya. */
+.ai-bar-input:focus-visible { outline: none; }
